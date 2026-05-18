@@ -141,8 +141,46 @@ body {
 }
 
 /* Adjusted font size for meal table content */
+.meal-table {
+    table-layout: fixed;
+    min-width: 720px;
+}
+
+.meal-table th:nth-child(1),
+.meal-table td:nth-child(1) {
+    width: 14%;
+}
+
+.meal-table th:nth-child(2),
+.meal-table td:nth-child(2) {
+    width: 28%;
+}
+
+.meal-table th:nth-child(3),
+.meal-table td:nth-child(3) {
+    width: 58%;
+}
+
 .meal-table td {
     font-size: 1rem; /* text-base */
+    vertical-align: top;
+    line-height: 1.5;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.meal-table td:nth-child(2) {
+    font-weight: 700;
+    word-break: keep-all;
+}
+
+.meal-table td:nth-child(3) ul {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.meal-table td:nth-child(3) li + li {
+    margin-top: 0.25rem;
 }
 
 .header-image-container {
@@ -197,16 +235,18 @@ body {
     /* Default to full width on small screens */
     max-width: 400px;
     /* Max width for individual images */
+    aspect-ratio: 16 / 9;
     border-radius: 0.75rem;
     /* rounded-xl */
     overflow: hidden;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    background-color: #f8fafc;
 }
 
 .image-wrapper img {
     width: 100%;
-    height: 200px;
-    /* Consistent height for all grouped images */
+    height: 100%;
+    /* Consistent frame for all grouped images */
     object-fit: cover;
     display: block;
 }
@@ -300,10 +340,25 @@ body {
 .meal-table td:last-child {
     text-align: left;
     /* Align image within its cell to left */
-    padding-top: 0.5rem;
+    padding-top: 1rem;
     /* Adjust padding to align with text */
-    padding-bottom: 0.5rem;
+    padding-bottom: 1rem;
     /* Adjust padding */
+}
+
+.meal-photo-frame {
+    aspect-ratio: 16 / 9;
+}
+
+.meal-table .meal-photo-frame {
+    margin-top: 0.75rem !important;
+}
+
+.meal-table .meal-photo-frame img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block;
 }
 
 /* Styles for embedded video */
@@ -325,4 +380,21 @@ body {
     width: 100%;
     height: 100%;
     border: 0;
+}
+
+/* Custom styles for rest stop images to scale to full width with no margins and matched height */
+.rest-stop-wrapper {
+    max-width: 360px;
+    aspect-ratio: 4 / 3;
+    box-shadow: none;
+    border: none;
+    background: #ffffff;
+}
+
+.rest-stop-img {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    display: block !important;
 }
